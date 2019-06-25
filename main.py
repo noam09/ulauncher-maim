@@ -154,12 +154,12 @@ def run_cmd(cmd, output):
 
 def icon(i):
     c = commands()
+    if i == "clipboard":
+        return "images/clipboard.svg"
     if "area" in c[i]["name"].lower():
         return "images/crop.svg"
     if "window" in c[i]["name"].lower():
         return "images/window.svg"
-    if i == "clipboard":
-        return "images/clipboard.svg"
     return c[i]["icon"]
 
 
