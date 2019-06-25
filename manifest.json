@@ -1,0 +1,40 @@
+{
+  "required_api_version": "^2.0.0",
+  "name": "maim",
+  "description": "Quick maim screenshots",
+  "developer_name": "noam09",
+  "icon": "images/icon.svg",
+  "options": {
+    "query_debounce": 0.1
+  },
+  "preferences": [
+    {
+      "id": "maim",
+      "type": "keyword",
+      "name": "maim",
+      "description": "Quick maim screenshots",
+      "default_value": "m"
+    },
+    {
+      "id": "output",
+      "type": "input",
+      "name": "Pictures Directory",
+      "description": "Path to directory in which to save images",
+      "default_value": "$HOME/Pictures"
+    },
+    {
+      "id": "delay",
+      "type": "input",
+      "name": "Delay",
+      "description": "Delay (sleep) in seconds before calling maim command",
+      "default_value": "3"
+    },
+    {
+      "id": "extra",
+      "type": "input",
+      "name": "Extra Arguments",
+      "description": "Extra arguments to pass to maim",
+      "default_value": "--hidecursor --capturebackground --delay=0 --bordersize=2 --color=\"255,195,0\""
+    }
+  ]
+}
