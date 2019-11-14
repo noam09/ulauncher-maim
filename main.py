@@ -125,7 +125,7 @@ class KeywordQueryEventListener(EventListener):
             logger.error("Delay setting is not an integer: {}".format(str(e)))
         extra_args = extension.preferences["extra"]
         fullquery = event.query.split(" ")
-        fullquery = filter(None, fullquery)
+        fullquery = list(filter(None, fullquery))
         items = []
 
         if len(fullquery) > 0:
