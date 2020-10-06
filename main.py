@@ -128,10 +128,10 @@ class KeywordQueryEventListener(EventListener):
         fullquery = list(filter(None, fullquery))
         items = []
 
-        if len(fullquery) > 0:
+        if len([fullquery]) > 0:
             c = commands()
             for cmd in commands():
-                if len(fullquery) == 1 or any(word in str(c[cmd]["name"]).lower() for word in fullquery):
+                if len([fullquery]) == 1 or any(word in str(c[cmd]["name"]).lower() for word in fullquery):
                     for output in outputs():
                         # if len(fullquery) == 1 or \
                         #    (len(fullquery) > 2 and any(o in output.lower() for o in fullquery[2:])):
