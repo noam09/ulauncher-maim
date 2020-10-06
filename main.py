@@ -1,6 +1,6 @@
 import os
 import logging
-import distutils.spawn
+import shutil
 from datetime import datetime
 from ulauncher.api.client.Extension import Extension
 from ulauncher.api.client.EventListener import EventListener
@@ -18,9 +18,9 @@ maim_bin = ""
 xdotool_bin = ""
 convert_bin = ""
 # Locate maim binary
-maim_bin = distutils.spawn.find_executable('maim')
-convert_bin = distutils.spawn.find_executable('convert')
-xdotool_bin = distutils.spawn.find_executable('xdotool')
+maim_bin = shutil.which('maim')
+convert_bin = shutil.which('convert')
+xdotool_bin = shutil.which('xdotool')
 # This extension is useless without maim
 if maim_bin is None or maim_bin == "":
     logger.error("maim executable path could not be determined")
