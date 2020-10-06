@@ -117,7 +117,7 @@ class KeywordQueryEventListener(EventListener):
         global output_path, delay, extra_args
         output_path = os.path.expanduser(extension.preferences["output"])
         try:
-            if isinstance(int(extension.preferences["delay"]), (int, long)):
+            if isinstance(int(extension.preferences["delay"]), int):
                 delay = int(extension.preferences["delay"])
             else:
                 delay = 0
