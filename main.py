@@ -23,13 +23,16 @@ convert_bin = shutil.which('convert')
 xdotool_bin = shutil.which('xdotool')
 # This extension is useless without maim
 if maim_bin is None or maim_bin == "":
-    logger.error("maim executable path could not be determined")
-    exit()
+    err = "maim executable path could not be determined"
+    logger.error(err)
+    exit(err)
 if xdotool_bin is None or xdotool_bin == "":
-    logger.error("xdotool executable path could not be determined, no active window for you")
-    exit()
+    err = "xdotool executable path could not be determined, no active window for you"
+    logger.error(err)
+    exit(err)
 if convert_bin is None or convert_bin == "":
-    logger.error("convert executable path could not be determined, no fancy for you")
+    err = "convert executable path could not be determined, no fancy for you"
+    logger.error(err)
     fancy = ""
 else:
     fancy = " | {convert} - \( +clone -background black -shadow 80x3+5+5 \) +swap -background none -layers merge +repage".format(convert=convert_bin)
